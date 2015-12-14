@@ -93,13 +93,6 @@ function load_fonts() {
         }
 		
 add_action('wp_print_styles', 'load_fonts');
-
-
-function my_willowick_setup() {
-  	
-	
-}
-
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
@@ -170,3 +163,14 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+
+function my_willowick_setup() {
+        $scriptDir = trailingslashit( get_template_directory_uri() . "/js/" );
+  	wp_register_script('superfish', $scriptDir . 'superfish.js');
+        wp_enqueue_script('superfish');
+  	wp_register_script('wwdjs', $scriptDir . 'wwd.js');
+        wp_enqueue_script('wwdjs');
+	
+}
+add_action('wp_enqueue_scripts', 'my_willowick_setup');

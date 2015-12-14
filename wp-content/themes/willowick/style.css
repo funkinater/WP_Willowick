@@ -403,7 +403,7 @@ body {
     background: #FFF url("img/page-bg.jpg") repeat-x scroll 0px bottom;
     border-left: 5px solid #E5DCC5;
     border-bottom: 5px solid #E5DCC5;
-    min-height: 650px;
+    min-height: 780px;
     padding: 23px 50px 0px;
 	margin-top: 50px;
 }
@@ -514,9 +514,17 @@ table {
     height: 40px;
     right: 0px;
     top: 158px;
-    padding-left: 5px;
+    padding: 0 0 0 19px;
 }
 
+#cart p {
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+#main {
+    margin-top: 50px;
+}
 .clearfix:before,
 .clearfix:after {
   content: ".";    
@@ -733,7 +741,7 @@ a:active {
 ## Menus
 --------------------------------------------------------------*/
 #primary-menu {
-	font-size: 2em;
+	font-size: 1.5em;
 	color: white;
 	font-weight: bold;
 }
@@ -742,22 +750,25 @@ a:active {
 	clear: both;
 	display: block;
 	float: left;
-	width: 100%;
+        height: 40px;
 }
 
 .main-navigation ul {
-    display: none;
-    font-family: 'Titillium Web', sans-serif;
+    display: block;
     list-style: outside none none;
     margin: 0px 0px 0px 280px;
     padding: 20px 5px;
 }
 
 .main-navigation li {
+        display: block;
 	float: left;
 	position: relative;
-	font-size: .7em;
+        line-height: 40px;
+        height: 30px;
+/*	font-size: .7em;
 	font-weight: lighter;
+        margin-top: -14px;*/
 }
 
 .main-navigation a {
@@ -778,22 +789,56 @@ a:active {
     border-radius: 19px;
 }
 
+.main-navigation li a {
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 15px;
+}
+
 .main-navigation ul ul {
+        display: none;
 	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 	float: left;
 	position: absolute;
-	top: 1.5em;
-	left: -999em;
+	top: 40px;
 	z-index: 99999;
+        margin: 0px 0px 0px 20px;
 }
 
-.main-navigation ul ul ul {
-	left: -999em;
-	top: 0;
+.main-navigation ul ul li {
+    float: none;
+    width: 210px;
+    font-size: .6em;
+    position: relative;
+}
+
+.main-navigation ul ul li a {
+    padding: 5px 5px;
+}
+
+.main-navigation .sub-menu {
+    background: rgb(245,245,220);
+    color: black;
+/*    font-weight: bold;
+    font-size: 15px;
+    display: none;*/
+    
+}
+
+.main-navigation .sub-menu a {
+    color: brown;
+    text-decoration: none;
+}
+
+.main-navigation ul ul li ul {
+    position: absolute;
+    float: left;
+    width: 200px;
+    top: 5px;
 }
 
 .main-navigation ul ul a {
-	width: 200px;
 }
 
 .main-navigation ul ul li {
@@ -814,18 +859,28 @@ a:active {
 
 .main-navigation ul li:hover > ul,
 .main-navigation ul li.focus > ul {
-	left: auto;
 }
 
 .main-navigation ul ul li:hover > ul,
 .main-navigation ul ul li.focus > ul {
-	left: 100%;
 }
 
 .main-navigation .current_page_item > a,
 .main-navigation .current-menu-item > a,
 .main-navigation .current_page_ancestor > a,
 .main-navigation .current-menu-ancestor > a {
+}
+
+.main-navigation .current-menu-item > a,
+.main-navigation .current-page-item a,
+.main-navigation a:hover { 
+    border: 2px solid #000;
+    color: #000;
+    text-decoration: none;
+    background-color: #ffd543;
+    font-weight: bold;
+    border-radius: 19px;
+    -moz-border-radius: 19px;
 }
 
 /* Small menu. */
@@ -1009,7 +1064,7 @@ a:active {
 }
 
 aside {
-	height: 500px;
+
     float: left;
     z-index: 10;
     padding: 160px 0px 0px 10px;

@@ -25,8 +25,8 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <a class="button">Learn More</a></p>
 	</div> <!-- .wwidget -->
 	
-	<div class="wwidget">
+	<div class="wwidget fb-widget">
 		<h1>Like Us on Facebook</h1>
-		<p>Willowick is the Best!<a class="button">Learn More</a></p>
+		<div class="fb-page" data-href="https://www.facebook.com/willowickdesigns/" data-heigh="150" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/willowickdesigns/"><a href="https://www.facebook.com/willowickdesigns/">Willowick Designs</a></blockquote></div></div>
 	</div> <!-- .wwidget -->
 </aside><!-- #secondary -->
