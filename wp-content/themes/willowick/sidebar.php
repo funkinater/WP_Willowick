@@ -21,7 +21,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 	</div> <!-- .wwidget -->
 	
 	<div class="wwidget">
-		<h1>Social Networks</h1>
+		<h1>Latest Blog Post</h1>
 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <a class="button">Learn More</a></p>
 	</div> <!-- .wwidget -->
 	
