@@ -45,6 +45,7 @@ function willowick_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Primary', 'willowick' ),
+                'social' => __('Social Menu', 'willowick')
 	) );
 
 	/*
@@ -167,10 +168,13 @@ require get_template_directory() . '/inc/jetpack.php';
 
 function my_willowick_setup() {
         $scriptDir = trailingslashit( get_template_directory_uri() . "/js/" );
-  	wp_register_script('superfish', $scriptDir . 'superfish.js');
+
+        wp_register_script('superfish', $scriptDir . 'superfish.js');
         wp_enqueue_script('superfish');
-  	wp_register_script('wwdjs', $scriptDir . 'wwd.js');
+
+        wp_register_script('wwdjs', $scriptDir . 'wwd.js');
         wp_enqueue_script('wwdjs');
-	
+
+        wp_enqueue_style('wwd-fontawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css');
 }
 add_action('wp_enqueue_scripts', 'my_willowick_setup');

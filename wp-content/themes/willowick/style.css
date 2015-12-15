@@ -902,6 +902,51 @@ a:active {
 	display: block;
 }
 
+#menu-social {
+    position: absolute;
+    left: 275px;
+    top: 150px;
+    z-index: 9999;
+}
+
+#menu-social ul {
+    text-align: center;
+}
+
+#menu-social ul li {
+    display: inline-block;
+    position: relative;
+    padding-right: 5px;
+}
+
+#menu-social li a,
+#menu-social li a:hover {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#menu-social li a:before {
+    font-family: 'Fontawesome';
+    font-size: 25px;
+    -webkit-font-smoothing: antialiased;
+    color: rgb(114,255,104);
+}
+
+#menu-social li a[href*="twitter"]::before {
+    content: '\f081';
+}
+
+#menu-social li a[href*="facebook"]::before {
+    content: '\f230';
+}
+
+#menu-social li a[href*="google"]::before {
+    content: '\f0d4';
+}
+
+#menu-social li a[href*="pinterest"]::before {
+    content: '\f0d3';
+}
 @media screen and (min-width: 37.5em) {
 	.menu-toggle {
 		display: none;
@@ -943,6 +988,7 @@ a:active {
 	height: 1px;
 	width: 1px;
 	overflow: hidden;
+        display:none;
 }
 
 .screen-reader-text:focus {
