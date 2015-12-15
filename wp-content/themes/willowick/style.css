@@ -471,7 +471,7 @@ hr {
 
 ul,
 ol {
-	margin: 0 0 1.5em 3em;
+	/*margin: 0 0 1.5em 3em;*/
 }
 
 ul {
@@ -744,6 +744,7 @@ a:active {
 	font-size: 1.5em;
 	color: white;
 	font-weight: bold;
+        padding-left: 300px;
 }
 
 .main-navigation {
@@ -753,14 +754,13 @@ a:active {
         height: 40px;
 }
 
-.main-navigation ul {
+#primary-menu ul {
     display: block;
     list-style: outside none none;
-    margin: 0px 0px 0px 280px;
-    padding: 20px 5px;
+    padding: 20px 0;
 }
 
-.main-navigation li {
+#primary-menu > li {
         display: block;
 	float: left;
 	position: relative;
@@ -798,18 +798,18 @@ a:active {
 
 .main-navigation ul ul {
         display: none;
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+	/*box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);*/
 	float: left;
 	position: absolute;
-	top: 40px;
+	top: 26px;
 	z-index: 99999;
         margin: 0px 0px 0px 20px;
 }
 
 .main-navigation ul ul li {
     float: none;
-    width: 210px;
-    font-size: .6em;
+    width: 180px;
+    font-size: 12px;
     position: relative;
 }
 
@@ -818,16 +818,23 @@ a:active {
 }
 
 .main-navigation .sub-menu {
-    background: rgb(245,245,220);
-    color: black;
+    
 /*    font-weight: bold;
     font-size: 15px;
     display: none;*/
     
+    background-image: url('img/nav_bottom.png');
+    background-position: left bottom;
+    z-index: 999999999;
+    background-repeat: no-repeat;
+    padding-bottom: 25px;
 }
 
+.main-navigation .sub-menu li {
+    background-color: rgb(245,245,220);
+}
 .main-navigation .sub-menu a {
-    color: brown;
+    color: black;
     text-decoration: none;
 }
 
@@ -836,6 +843,7 @@ a:active {
     float: left;
     width: 200px;
     top: 5px;
+    left: 155px;
 }
 
 .main-navigation ul ul a {
@@ -871,9 +879,7 @@ a:active {
 .main-navigation .current-menu-ancestor > a {
 }
 
-.main-navigation .current-menu-item > a,
-.main-navigation .current-page-item a,
-.main-navigation a:hover { 
+.main-navigation .current-menu-item > a { 
     border: 2px solid #000;
     color: #000;
     text-decoration: none;
