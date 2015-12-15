@@ -398,14 +398,14 @@ body {
 }
 
 #primary { 
-	width: 660px;
+    width: 660px;
     float: right;
     background: #FFF url("img/page-bg.jpg") repeat-x scroll 0px bottom;
     border-left: 5px solid #E5DCC5;
     border-bottom: 5px solid #E5DCC5;
     min-height: 780px;
     padding: 23px 50px 0px;
-	margin-top: 50px;
+    margin-top: -40px;
 }
 
 div.header-right {
@@ -416,13 +416,6 @@ div.header-right {
 	width: 660px;
 	min-height: 93px;
 	
-}
-
-#search {
-    
-	background: url('img/sprite.png') no-repeat -236px -270px;
-	width: 278px;
-	height: 74px;
 }
 
 div.site-branding {
@@ -613,7 +606,7 @@ form#login, form#login2 {
     width: 277px;
     height: 74px;
     position: absolute;
-    top: 23px;
+    top: 10px;
     right: -22px;
     font-size: 13px;
     background-color: transparent;
@@ -705,9 +698,7 @@ form#login, form#login2 {
     height: 105px;
     width: 964px;
     background: transparent url("img/sprite.png") no-repeat scroll 0px 0px;
-    position: absolute;
-    top: 93px;
-    left: -32px;
+    margin: 0 0 0 -32px;
     z-index: 900;
 }
 
@@ -904,8 +895,8 @@ a:active {
 
 #menu-social {
     position: absolute;
-    left: 275px;
-    top: 150px;
+    right: 90px;
+    top: 50px;
     z-index: 9999;
 }
 
@@ -929,7 +920,7 @@ a:active {
     font-family: 'Fontawesome';
     font-size: 25px;
     -webkit-font-smoothing: antialiased;
-    color: rgb(114,255,104);
+    color: rgb(51,102,0);
 }
 
 #menu-social li a[href*="twitter"]::before {
@@ -1130,8 +1121,9 @@ aside {
 }
 
 aside, .site-branding {
-	background-color: #C7B17D;
+    background-color: #C7B17D;
     width: 239px;
+    padding: 40px 0 0 10px;
 }
 
 .wwidget {
