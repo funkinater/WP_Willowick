@@ -24,7 +24,10 @@
 				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'willowick' ),
 				'after'  => '</div>',
 			) );
+                        
+                        get_template_part(get_template_directory_uri() . '/template-parts/testimonials.php' );
 		?>
+            
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">

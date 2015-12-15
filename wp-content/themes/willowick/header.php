@@ -58,15 +58,14 @@
                     <div id="search">
                         <?php get_search_form(); ?>
                     </div>
-		</div>
-		
-		
+                
+                <?php     my_social_menu(); ?>
+		</div> <!--.header-right-->
+                
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'willowick' ); ?></button>
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu', 'menu_class'=> 'sf-menu' ) ); ?>
 		</nav><!-- #site-navigation -->
-                
-                <?php     my_social_menu(); ?>
                 
                 <div id="cart">
                     <p>Your Basket (0)</p>

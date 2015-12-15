@@ -142,3 +142,10 @@ function my_social_menu() {
                 );
     }
 }
+
+function shortcode_testimonials() {
+    ob_start();
+    get_template_part(get_template_directory_uri() . '/template-parts/testimonials.php' );
+    return ob_get_clean();
+}
+add_shortcode('testimonials', 'shortcode_testimonials');

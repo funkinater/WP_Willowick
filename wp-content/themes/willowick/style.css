@@ -408,11 +408,13 @@ body {
     margin-top: -40px;
 }
 
+.site-header {
+        background: url('img/HeaderBG.png') no-repeat;
+}
+
 div.header-right {
         float: right;
         position: relative;
-        border-left: 5px solid #E5DCC5;
-        background: white;
 	width: 660px;
 	min-height: 93px;
 	
@@ -894,20 +896,19 @@ a:active {
 }
 
 #menu-social {
-    position: absolute;
-    right: 90px;
-    top: 50px;
-    z-index: 9999;
+    float:right;
+    margin: 62px 13px 0 0;
 }
 
 #menu-social ul {
     text-align: center;
+    margin: 0;
 }
 
 #menu-social ul li {
     display: inline-block;
     position: relative;
-    padding-right: 5px;
+    padding-right: 12px;
 }
 
 #menu-social li a,
@@ -920,7 +921,7 @@ a:active {
     font-family: 'Fontawesome';
     font-size: 25px;
     -webkit-font-smoothing: antialiased;
-    color: rgb(51,102,0);
+    color: rgb(255,238,0);
 }
 
 #menu-social li a[href*="twitter"]::before {
@@ -1120,7 +1121,7 @@ aside {
     padding: 160px 0px 0px 10px;
 }
 
-aside, .site-branding {
+aside {
     background-color: #C7B17D;
     width: 239px;
     padding: 40px 0 0 10px;
