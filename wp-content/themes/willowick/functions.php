@@ -82,14 +82,17 @@ endif; // willowick_setup
 add_action( 'after_setup_theme', 'willowick_setup' );
 
 function load_fonts() {
+    
+    
+//Google Fonts:
+//font-family: 'Dosis', sans-serif;*
+//font-family: 'Josefin Sans', sans-serif;*
+//font-family: 'Josefin Slab', serif;
+    
             wp_register_style('googleFonts', 'https://fonts.googleapis.com/css?family=Dosis:400,700|Yanone+Kaffeesatz:400,200|Poiret+One|Josefin+Sans:400,400italic|Amatic+SC:700|Architects+Daughter|Josefin+Slab');
             wp_enqueue_style( 'googleFonts');
             wp_register_style('googleFonts2', 'https://fonts.googleapis.com/css?family=Rock+Salt');
             wp_enqueue_style( 'googleFonts2');
-            wp_register_style('googleFonts3', 'https://fonts.googleapis.com/css?family=Permanent+Marker');
-            wp_enqueue_style( 'googleFonts3');
-            wp_register_style('TitilliumWeb', 'https://fonts.googleapis.com/css?family=Titillium+Web');
-            wp_enqueue_style( 'TitilliumWeb');
             
         }
 		

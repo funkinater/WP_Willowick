@@ -15,11 +15,43 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 <aside id="secondary" class="widget-area" role="complementary">
 	<?php //dynamic_sidebar( 'sidebar-1' ); ?>
 	
+    
+    
+        <?php
+        
+        $args = array(
+            'posts_per_page' => 1,
+            'post_type'     => 'page',
+            'orderby'       => 'rand',
+            'meta_query'    =>  array(
+                array(
+                    'key' => 'pageExcerpt',
+                    'value' => ' ',
+                    'compare' => '!='
+                ),
+                array(
+                    'key' => 'sidebar',
+                    'value' => 1,
+                    'compare' => '='
+                ),
+                'relation' => 'AND'
+            )
+        );
+        
+        $query = new WP_Query($args);
+        
+        if($query->have_posts()) {
+            $query->the_post();
+        ?>
+    
 	<div class="wwidget">
-		<h1>Soy Candles, Bath & Body</h1>
-		<p>Willowick is the Best!<a class="button">Learn More</a></p>
+		<h1><?php the_title(); ?></h1>
+                <p><?php echo get_post_meta(get_the_ID(), 'pageExcerpt', true); ?><a href="<?php the_permalink(); ?>" class="button">Learn More</a></p>
 	</div> <!-- .wwidget -->
 	
+        <?php } //endif 
+            wp_reset_query();
+        ?>
                 
         <?php
             $args = array(
@@ -41,7 +73,9 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 		<?php the_excerpt(); ?><a href="<?php the_permalink(); ?>" class="button">Full Article</a>
 	</div> <!-- .wwidget -->
         
-            <?php } /* endif */ ?>
+            <?php } /* endif */
+                wp_reset_query();
+            ?>
 	
 	<div class="wwidget fb-widget">
 		<h1>Like Us on Facebook</h1>

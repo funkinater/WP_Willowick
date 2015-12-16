@@ -10,14 +10,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: willowick
 
 Google Fonts:
-font-family: 'Dosis', sans-serif;
-font-family: 'Yanone Kaffeesatz', sans-serif;
-font-family: 'Poiret One', cursive;
-font-family: 'Josefin Sans', sans-serif;
-font-family: 'Amatic SC', cursive;
-font-family: 'Architects Daughter', cursive;
+font-family: 'Dosis', sans-serif;*
+font-family: 'Josefin Sans', sans-serif;*
 font-family: 'Josefin Slab', serif;
-font-family: 'Permanent Marker', cursive;
 
 
 Tags:
@@ -313,6 +308,7 @@ h6 {
 
 p {
 	margin-bottom: 1.5em;
+        font-size: 1.3em;
 }
 
 dfn,
@@ -593,6 +589,7 @@ table {
 #cart p {
     margin-top: 5px;
     font-weight: bold;
+    font-size: .9em;
 }
 
 #main {
