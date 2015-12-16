@@ -80,14 +80,6 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
                 wp_reset_query();
             ?>
         
-        
-        
-	<?php 
-                if (is_active_sidebar('sidebar-2')) {
-                    dynamic_sidebar('sidebar-2');
-                } //endif
-        ?>
-	
 	<div class="wwidget fb-widget">
 		<h1>Like Us on Facebook</h1>
 		<div class="fb-page" data-href="https://www.facebook.com/willowickdesigns/" data-heigh="150" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/willowickdesigns/"><a href="https://www.facebook.com/willowickdesigns/">Willowick Designs</a></blockquote></div></div>
