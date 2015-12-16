@@ -20,10 +20,28 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 		<p>Willowick is the Best!<a class="button">Learn More</a></p>
 	</div> <!-- .wwidget -->
 	
-	<div class="wwidget">
+                
+        <?php
+            $args = array(
+                'post_type' =>  'article',
+                'orderby'   => 'date',
+                'order'     => 'DESC',
+                'posts_per_page' => 1
+            );
+            $query = new WP_Query($args);
+
+            if($query->have_posts()) {
+                $query->the_post();
+        ?>
+	<div class="wwidget article-widget">
 		<h1>Latest Blog Post</h1>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <a class="button">Learn More</a></p>
+                
+                <span class="article-date"><?php the_date(); ?></span>
+                <span class="article-title"><?php the_title(); ?></span>
+		<?php the_excerpt(); ?><a href="<?php the_permalink(); ?>" class="button">Full Article</a>
 	</div> <!-- .wwidget -->
+        
+            <?php } /* endif */ ?>
 	
 	<div class="wwidget fb-widget">
 		<h1>Like Us on Facebook</h1>

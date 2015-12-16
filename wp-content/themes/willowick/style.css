@@ -323,7 +323,8 @@ i {
 }
 
 blockquote {
-	margin: 0 1.5em;
+	/*margin: 0 1.5em;*/
+        margin: 0;
 }
 
 address {
@@ -452,29 +453,54 @@ q:after {
 	content: "";
 }
 
+#the_finger{
+    width: 250px;
+    height: 127px;
+    position: absolute;
+    top: 10px;
+    left: -2265px;
+    background: transparent url('img/the_finger_small.png') no-repeat;
+    z-index: 100;
+}
+
 #testimonials {
-    width: 300px;
-    display: block;
+    width: 280px;
+    display: none;
     float: right;
-    border: 1px solid gray;
-    background-color: rgba(180, 17, 225, .3);
+    border-left: 1px solid #808080;
+    border-right: 1px solid #808080;
+    border-top: 1px solid #808080;
+    text-align: left;
+    margin-right: -129px;
+    position: relative;
 }
 
 #testimonials p {
-    margin: 0;
-    font-size: 1.8em;
+    margin: 0px 0px -25px;
+    font-size: 1.3em;
     font-style: italic;
+    font-weight: bolder;
+    padding-top: 10px;
+    text-align: center;
+    display: block;
+    background: #C7B17D none repeat scroll 0% 0%;
 }
 
 #testimonials author {
     display: block;
     text-align: right;
-    font-size: 1em;
+    font-size: .8em;
     font-style: italic;
+    padding-top: 1em;
+    font-weight: bolder;
 }
 
 blockquote ul.rotatelist {
     font-size: 1.2em;
+    width: 280px;
+    list-style: outside none none;
+    margin-left: -1px;
+    margin-top: 25px;
 }
 blockquote,
 q {
@@ -506,7 +532,9 @@ li > ol {
 	margin-bottom: 0;
 	margin-left: 1.5em;
 }
-
+#testimonials .blockquote {
+    width: 300px;
+}
 ul.rotatelist {
             width:280px;
             list-style: none;
@@ -517,11 +545,17 @@ ul.rotatelist {
             margin-top:30px;
 }
 ul.rotatelist li {
-            position:absolute;
-            left:0px;
-            top:0px;
-            display:inline;
-            width:280px;
+           position: absolute;
+           left: 0px;
+           top: 0px;
+           display: inline;
+           width: 280px;
+           background-color: #F5F5DC;
+           border-bottom: 1px solid #008000;
+           border-left: 1px solid #808080;
+           border-right: 1px solid #808080;
+           padding: 10px 5px;
+            
 }
 ul.rotatelist li.show {
             z-index:500;      
@@ -1171,6 +1205,38 @@ aside {
     padding: 40px 0 0 10px;
 }
 
+.article-date {    
+    display: block;
+    text-align: right;
+    padding-right: 2px;
+    margin-bottom: 10px;
+    font-size: 1em;
+    border-bottom: 1px solid gray;
+    position: relative;
+    margin-left: -10px;
+    background-color: #D1C8A1;
+    border-right: 1px solid gray;
+    border-left: 1px solid gray;t: -10px;
+}
+
+.article-date:before {
+    font-family: 'Fontawesome';
+    font-size: 1em;
+    padding-right: 3px;
+    content: '\f073';
+}
+
+.article-date em {
+    display: inline;
+    text-align: left;
+    font-style: normal;
+    text-align: left;
+}
+
+.article-title {  
+    font-size: 1.4em;
+    padding: 15px 10px 0 10px;
+}
 .wwidget {
 	display: block;
 	font-family: 'Dosis', sans-serif;
@@ -1187,13 +1253,15 @@ aside {
 	margin: 0px 0px -30px -32px;
 	padding: 11px 0px 0px 30px;
 	text-align: left;
+        letter-spacing: 1px;
+        word-spacing: 5px;
 }
 
 .wwidget a.button {
     display: block;
-	background: url('img/sprite.png') no-repeat -536px -364px;
-	width: 141px;
-	height: 36px;
+    background: url('img/sprite.png') no-repeat -536px -364px;
+    width: 141px;
+    height: 36px;
     color: #FFF;
     text-decoration: none;
     padding-top: 5px;
@@ -1211,7 +1279,7 @@ aside {
 }
 
 .wwidget p {
-	font-size: .9em;
+	font-size: 1.1em;
 	padding: 0px 20px 0px 10px;
 }
 

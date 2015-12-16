@@ -13,6 +13,15 @@ jQuery(document).ready(function($){
     //Start superfish
     $('ul.sf-menu, ul.sf-menu ul').superfish();
     
+    //Set up animations related to testimonials
+    $('#testimonials').delay(2000).fadeIn(2000, function() {
+        $('#the_finger').animate({
+            left: "+=2000"
+        }, 500, function() {
+
+        });
+    });
+    
     //Set up rotating unordered list (for testimonials, etc)
     $('ul.rotatelist li').css({opacity: 0.0});
     $('ul.rotatelist li:nth-child('+nextIndex+')').addClass('show').animate({opacity: 1.0}, fadeDuration);

@@ -72,10 +72,44 @@ function post_types() {
 		'capability_type'		=>	'post',
 		'has_archive'			=>	true,
 		'hierarchical'			=>	false,
-		'menu_position'			=>	5,
+		'menu_position'			=>	6,
 		'supports'				=>	array( 'title', 'editor', 'thumbnail')
 	);
-	register_post_type('testimonial', $args);
+	register_post_type('article', $args);
+        
+	$labels = array(
+		'name'				=>	'News Articles',
+		'singular_name'		=>	'News Article',
+		'menu_name'	 		=>	'News Articles',
+		'name_admin_bar'	=>	'News Article',
+		'add_new'			=>	'Add New',
+		'add_new_item'		=>	'Create News Article',
+		'edit_item'			=>	'Edit News Article',
+		'view_item'			=>	'View News Article',
+		'all_items'			=>	'All News Articles',
+		'search_items'		=>	'Search News Articles',
+		'parent_item_colon'	=>	'Parent News Articles:',
+		'not_found'			=>	'No news articles found',
+		'not_found_in_trash' =>	'No news articles found in Trash.'
+	);
+	
+	$args = array(
+		'labels'				=>	$labels,
+                'taxonomies'                    =>  array('category', 'post_tag'),
+		'public'				=>	true,
+		'publicly_queryable'	=>	true,
+		'show_ui'				=>	true,
+		'show_in_menu'			=>	true,
+		'menu_icon'				=>	'dashicons-admin-post',
+		'query_var'				=>	true,
+		'rewrite'				=>	array( 'slug' => 'articles'),
+		'capability_type'		=>	'post',
+		'has_archive'			=>	true,
+		'hierarchical'			=>	false,
+		'menu_position'			=>	7,
+		'supports'				=>	array( 'title', 'excerpt', 'custom-fields', 'categories', 'editor', 'thumbnail')
+	);
+	register_post_type('article', $args);
 }
 add_action('init', 'post_types');
 

@@ -3,9 +3,10 @@ $args = array('post_type' => 'testimonial', 'orderby' => 'rand');
 $query = New WP_Query($args);
 
 ?>
-
 <div id="testimonials">
-    <p>See what our clients have to say!</p>
+    
+<div id="the_finger"></div>
+    <p>What Our Clients Say...</p>
     <blockquote>
         <ul class="rotatelist">
             <?php 
@@ -20,4 +21,4 @@ $query = New WP_Query($args);
             ?>
         </ul>
     </blockquote>
-</div>
+</div> <!--#testimonials-->
