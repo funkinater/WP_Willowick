@@ -482,13 +482,13 @@ q:after {
     background: #C7B17D none repeat scroll 0% 0%;
 }
 
-#testimonials author {
+#testimonials author, .wwidget author {
     display: block;
     text-align: right;
     font-size: .8em;
     font-style: italic;
     padding-top: 1em;
-    font-weight: bolder;
+    font-weight: bold;
 }
 
 blockquote ul.rotatelist {
@@ -1238,6 +1238,12 @@ aside {
 	display: block;
 	font-family: 'Dosis', sans-serif;
 	/* font-family: 'Architects Daughter', cursive; */
+}
+
+.wwidget img {
+    display: block;
+    margin: 1.2em auto;
+    border: 2px solid black;
 }
 
 .wwidget h1 {

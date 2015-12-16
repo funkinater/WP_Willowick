@@ -21,6 +21,7 @@
 </head>
 
 <body <?php body_class(); ?>>
+    
     <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -71,5 +72,5 @@
                     <p>Your Basket (0)</p>
                 </div><!--#cart-->
 	</header><!-- #masthead -->
-
+        <div id="wrapper" class="clearfix">
 	<div id="content" class="site-content clearfix">

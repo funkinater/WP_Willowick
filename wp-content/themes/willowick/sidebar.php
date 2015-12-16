@@ -13,10 +13,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 ?>
 
 <aside id="secondary" class="widget-area" role="complementary">
-	<?php //dynamic_sidebar( 'sidebar-1' ); ?>
 	
-    
-    
         <?php
         
         $args = array(
@@ -46,12 +43,17 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
     
 	<div class="wwidget">
 		<h1><?php the_title(); ?></h1>
-                <p><?php echo get_post_meta(get_the_ID(), 'pageExcerpt', true); ?><a href="<?php the_permalink(); ?>" class="button">Learn More</a></p>
+                <p><?php if (get_the_ID() == 217) {
+                    echo do_shortcode('[testimonials count=1]') . '<a href="' . get_permalink(217) . '" class="button">Show All</a>';
+                } else {
+                    echo get_post_meta(get_the_ID(), 'pageExcerpt', true); ?>
+                    <a href="<?php the_permalink(); ?>" class="button">Learn More</a></p>
+                <?php } //endif ?>
 	</div> <!-- .wwidget -->
 	
-        <?php } //endif 
-            wp_reset_query();
-        ?>
+        <?php } //endif
+            wp_reset_query(); ?>
+
                 
         <?php
             $args = array(
@@ -70,12 +72,21 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
                 
                 <span class="article-date"><?php the_date(); ?></span>
                 <span class="article-title"><?php the_title(); ?></span>
+                <?php echo get_the_post_thumbnail($query->ID, 'widget-thumb'); ?>
 		<?php the_excerpt(); ?><a href="<?php the_permalink(); ?>" class="button">Full Article</a>
 	</div> <!-- .wwidget -->
         
             <?php } /* endif */
                 wp_reset_query();
             ?>
+        
+        
+        
+	<?php 
+                if (is_active_sidebar('sidebar-2')) {
+                    dynamic_sidebar('sidebar-2');
+                } //endif
+        ?>
 	
 	<div class="wwidget fb-widget">
 		<h1>Like Us on Facebook</h1>

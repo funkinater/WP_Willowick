@@ -143,9 +143,16 @@ function my_social_menu() {
     }
 }
 
-function shortcode_testimonials() {
-    ob_start();
-    get_template_part('template-parts/testimonials' );
-    return ob_get_clean();
+function shortcode_testimonials($atts) {
+    shortcode_atts(array(
+        'count' => 1), $atts);
+    
+    //ob_start();
+    if ( $atts[0] > 1 ) {
+        get_template_part('template-parts/testimonials' );
+    } else {
+        get_template_part('template-parts/testimonials-single' );
+    }
+    //return ob_get_clean();
 }
 add_shortcode('testimonials', 'shortcode_testimonials');

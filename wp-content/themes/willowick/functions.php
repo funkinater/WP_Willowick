@@ -41,6 +41,7 @@ function willowick_setup() {
 	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 	 */
 	add_theme_support( 'post-thumbnails' );
+        add_image_size('widget-thumb',150,9999);
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -118,6 +119,15 @@ function willowick_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar', 'willowick' ),
 		'id'            => 'sidebar-1',
+		'description'   => '',
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'WWD_Sidebar', 'willowick' ),
+		'id'            => 'sidebar-2',
 		'description'   => '',
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
