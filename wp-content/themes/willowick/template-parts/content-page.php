@@ -12,7 +12,9 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <?php if (!is_home() && !is_front_page()) { ?>
 	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		<?php 
+                the_title( '<h1 class="entry-title">', '</h1>' ); 
+                ?>
 	</header><!-- .entry-header -->
     <?php } ?>
 
@@ -24,23 +26,21 @@
 				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'willowick' ),
 				'after'  => '</div>',
 			) );
-                        
-                        get_template_part(get_template_directory_uri() . '/template-parts/testimonials.php' );
 		?>
             
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
 		<?php
-			edit_post_link(
-				sprintf(
-					/* translators: %s: Name of current post */
-					esc_html__( 'Edit %s', 'willowick' ),
-					the_title( '<span class="screen-reader-text">"', '"</span>', false )
-				),
-				'<span class="edit-link">',
-				'</span>'
-			);
+//			edit_post_link(
+//				sprintf(
+//					/* translators: %s: Name of current post */
+//					esc_html__( 'Edit %s', 'willowick' ),
+//					the_title( '<span class="screen-reader-text">"', '"</span>', false )
+//				),
+//				'<span class="edit-link">',
+//				'</span>'
+//			);
 		?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

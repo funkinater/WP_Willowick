@@ -7,12 +7,12 @@ $query = New WP_Query($args);
 <div id="testimonials">
     <p>See what our clients have to say!</p>
     <blockquote>
-        <ul>
+        <ul class="rotatelist">
             <?php 
                    if($query->have_posts()) {
                        while ($query->have_posts()) {
-                           the_post();
-                           echo '<li>' . get_the_content() . '<li>';
+                           $query->the_post();
+                           echo '<li>' . get_the_content() . '<author>' . get_the_title() . '</author></l1>';
                        }
                    }
                    

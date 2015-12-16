@@ -452,6 +452,30 @@ q:after {
 	content: "";
 }
 
+#testimonials {
+    width: 300px;
+    display: block;
+    float: right;
+    border: 1px solid gray;
+    background-color: rgba(180, 17, 225, .3);
+}
+
+#testimonials p {
+    margin: 0;
+    font-size: 1.8em;
+    font-style: italic;
+}
+
+#testimonials author {
+    display: block;
+    text-align: right;
+    font-size: 1em;
+    font-style: italic;
+}
+
+blockquote ul.rotatelist {
+    font-size: 1.2em;
+}
 blockquote,
 q {
 	quotes: "" "";
@@ -481,6 +505,26 @@ li > ul,
 li > ol {
 	margin-bottom: 0;
 	margin-left: 1.5em;
+}
+
+ul.rotatelist {
+            width:280px;
+            list-style: none;
+            position:relative;
+            margin:0;
+            color:#000000;
+            font-size:28px;
+            margin-top:30px;
+}
+ul.rotatelist li {
+            position:absolute;
+            left:0px;
+            top:0px;
+            display:inline;
+            width:280px;
+}
+ul.rotatelist li.show {
+            z-index:500;      
 }
 
 dt {
