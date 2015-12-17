@@ -392,15 +392,19 @@ body {
 
 #page {
 	background-color: #C7B17D;
+    background: url('img/wrapperBG.png');
 }
 
+#content {
+    background: url('img/wrapperBG.png');
+}
 #primary { 
     width: 660px;
     float: right;
-    background: #FFF url("img/page-bg.jpg") repeat-x scroll 0px bottom;
+/*    background: #FFF url("img/page-bg.jpg") repeat-x scroll 0px bottom;
     border-left: 5px solid #E5DCC5;
     border-bottom: 5px solid #E5DCC5;
-    min-height: 780px;
+    min-height: 780px;*/
     padding: 23px 50px 0px;
     margin-top: -40px;
 }
@@ -1307,6 +1311,20 @@ section.gallery {
 ## Footer
 --------------------------------------------------------------*/
 
+footer {
+    position: relative;
+    background-color: #C7B17D;
+}
+
+#footer-top-border {
+    position: absolute;
+    width:660px;
+    height:5px;
+    padding:0;
+    margin:0;
+    right:0;
+    background-color: #E5DCC5;
+}
 #footerLeft {
     float: left;
     width: 400px;

@@ -21,7 +21,7 @@
 			<h1>Have a Question?</h1>
 			<?php get_template_part('contact'); ?>
 		</div> <!--#contact -->
-		
+                <div id="footer-top-border"></div>
 		<div id="footerLeft">
                     <div id="scentwidget">
                         <h2>Find the Perfect Scent</h2>

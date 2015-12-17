@@ -9,7 +9,6 @@ wp-content/backups/
 wp-content/blogs.dir/
 wp-content/cache/
 wp-content/upgrade/
-wp-content/uploads/
 wp-content/wp-cache-config.php
 wp-content/plugins/hello.php
 logs/
@@ -18,4 +17,4 @@ willowickdesigns.com-access_log
 willowickdesigns.com-error_log
 /readme.html
 /license.txt
-
+nbproject/
