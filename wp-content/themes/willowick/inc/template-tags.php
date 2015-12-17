@@ -145,13 +145,13 @@ function my_social_menu() {
 
 function shortcode_testimonials($atts) {
     shortcode_atts(array(
-        'count' => 1), $atts);
+        'count' => 'multiple'), $atts);
     
     //ob_start();
-    if ( $atts[0] > 1 ) {
-        get_template_part('template-parts/testimonials' );
-    } else {
+    if ( $atts['count'] != 'multiple' ) {
         get_template_part('template-parts/testimonials-single' );
+    } else {
+        get_template_part('template-parts/testimonials' );
     }
     //return ob_get_clean();
 }

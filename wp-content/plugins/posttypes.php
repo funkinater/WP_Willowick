@@ -13,15 +13,30 @@
 
 function custom_taxonomies() {
     
-    $labels = array(
-        'name' => 'Scents'
-    );
+	$labels = array(
+		'name'				=>	'Scents',
+		'singular_name'		=>	'Scent',
+		'search_items'		=>	'Search Scents',
+		'all_items'			=>	'All Scents',
+                'parent_item'           =>      'Parent Scent',
+		'parent_item_colon'	=>	'Parent Scents:',
+		'edit_item'			=>	'Edit Scent',
+		'update_item'			=>	'Update Scent',
+		'add_new_item'		=>	'New Scent',
+                'new_item_name'         =>      'New Scent Name',
+		'menu_name'	 		=>	'Scents',
+	);
+	
+	$args = array(
+		'labels'				=>	$labels,
+		'show_ui'				=>	true,
+		'show_admin_column'			=>	false,
+		'query_var'				=>	true,
+		'rewrite'				=>	array( 'slug' => 'scents'),
+		'hierarchical'			=>	true
+	);
     
-    register_taxonomy(
-            'cat_scent',
-            'product',
-            $labels
-            );
+    register_taxonomy('cat_scent',array('product'),$args);
 }
 add_action('init','custom_taxonomies');
 
@@ -30,7 +45,7 @@ function add_title_as_category( $postid ) {
   $post = get_post($postid);
   if ( $post->post_type == 'scent') { // change 'post' to any cpt you want to target
     $term = get_term_by('slug', $post->post_name, 'cat_scent');
-    if ( empty($term) ) {
+    if ( empty($term) && $post->post_title != 'Auto Draft') {
       $add = wp_insert_term( $post->post_title, 'cat_scent', array('slug'=> $post->post_name) );
       if ( is_array($add) && isset($add['term_id']) ) {
         wp_set_object_terms($postid, $add['term_id'], 'cat_scent', true );
@@ -39,6 +54,7 @@ function add_title_as_category( $postid ) {
   }
 }
 add_action('save_post', 'add_title_as_category');
+
 function post_types() {
 	$labels = array(
 		'name'				=>	'Scents',
@@ -158,7 +174,7 @@ function post_types() {
 	
 	$args = array(
 		'labels'				=>	$labels,
-                'taxonomies'                    =>  array('category', 'cat_scent'),
+                'taxonomies'                    =>  array('cat_scent','post_tag'),
 		'public'				=>	true,
 		'publicly_queryable'	=>	true,
 		'show_ui'				=>	true,
@@ -166,11 +182,11 @@ function post_types() {
 		'menu_icon'				=>	'dashicons-admin-post',
 		'query_var'				=>	true,
 		'rewrite'				=>	array( 'slug' => 'products'),
-		'capability_type'		=>	'post',
+		'capability_type'		=>	'page',
 		'has_archive'			=>	false,
 		'hierarchical'			=>	true,
 		'menu_position'			=>	8,
-		'supports'				=>	array( 'title', 'excerpt', 'custom-fields', 'categories', 'cat_scent', 'editor', 'thumbnail', 'page-attributes')
+		'supports'				=>	array( 'title', 'excerpt', 'categories', 'editor', 'thumbnail', 'page-attributes', 'custom-fields')
 	);
 	register_post_type('product', $args);
         
