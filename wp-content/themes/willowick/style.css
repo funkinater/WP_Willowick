@@ -1307,6 +1307,10 @@ aside {
 section.gallery {
     margin-bottom: 3em;
 }
+
+.fb_iframe_widget {
+	margin: 6px 0 10px -5px;
+}
 /*--------------------------------------------------------------
 ## Footer
 --------------------------------------------------------------*/
@@ -1322,6 +1326,7 @@ footer {
     height:5px;
     padding:0;
     margin:0;
+    top:-5px;
     right:0;
     background-color: #E5DCC5;
 }

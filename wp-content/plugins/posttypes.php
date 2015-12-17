@@ -10,6 +10,35 @@
 
 */
 
+
+function custom_taxonomies() {
+    
+    $labels = array(
+        'name' => 'Scents'
+    );
+    
+    register_taxonomy(
+            'cat_scent',
+            'product',
+            $labels
+            );
+}
+add_action('init','custom_taxonomies');
+
+function add_title_as_category( $postid ) {
+  if ( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE ) return;
+  $post = get_post($postid);
+  if ( $post->post_type == 'scent') { // change 'post' to any cpt you want to target
+    $term = get_term_by('slug', $post->post_name, 'cat_scent');
+    if ( empty($term) ) {
+      $add = wp_insert_term( $post->post_title, 'cat_scent', array('slug'=> $post->post_name) );
+      if ( is_array($add) && isset($add['term_id']) ) {
+        wp_set_object_terms($postid, $add['term_id'], 'cat_scent', true );
+      }
+    }
+  }
+}
+add_action('save_post', 'add_title_as_category');
 function post_types() {
 	$labels = array(
 		'name'				=>	'Scents',
@@ -75,7 +104,7 @@ function post_types() {
 		'menu_position'			=>	6,
 		'supports'				=>	array( 'title', 'editor', 'thumbnail')
 	);
-	register_post_type('article', $args);
+	register_post_type('testimonial', $args);
         
 	$labels = array(
 		'name'				=>	'News Articles',
@@ -110,12 +139,48 @@ function post_types() {
 		'supports'				=>	array( 'title', 'excerpt', 'custom-fields', 'categories', 'editor', 'thumbnail')
 	);
 	register_post_type('article', $args);
+        
+	$labels = array(
+		'name'				=>	'Products',
+		'singular_name'		=>	'Product',
+		'menu_name'	 		=>	'Products',
+		'name_admin_bar'	=>	'Product',
+		'add_new'			=>	'Add New',
+		'add_new_item'		=>	'New Product',
+		'edit_item'			=>	'Edit Product',
+		'view_item'			=>	'View Product',
+		'all_items'			=>	'All Products',
+		'search_items'		=>	'Search Products',
+		'parent_item_colon'	=>	'Parent Products:',
+		'not_found'			=>	'No products found',
+		'not_found_in_trash' =>	'No products found in Trash.'
+	);
+	
+	$args = array(
+		'labels'				=>	$labels,
+                'taxonomies'                    =>  array('category', 'cat_scent'),
+		'public'				=>	true,
+		'publicly_queryable'	=>	true,
+		'show_ui'				=>	true,
+		'show_in_menu'			=>	true,
+		'menu_icon'				=>	'dashicons-admin-post',
+		'query_var'				=>	true,
+		'rewrite'				=>	array( 'slug' => 'products'),
+		'capability_type'		=>	'post',
+		'has_archive'			=>	false,
+		'hierarchical'			=>	true,
+		'menu_position'			=>	8,
+		'supports'				=>	array( 'title', 'excerpt', 'custom-fields', 'categories', 'cat_scent', 'editor', 'thumbnail', 'page-attributes')
+	);
+	register_post_type('product', $args);
+        
 }
 add_action('init', 'post_types');
 
 //Flush rewrite rules to add "scent" as a permalink slug
 function my_rewrite_flush() {
 	post_types();
+        custom_taxonomies();
 	flush_rewrite_rules();
 }
 register_activation_hook( __FILE__, 'my_rewrite_flush' );
