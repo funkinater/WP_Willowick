@@ -958,7 +958,7 @@ a:active {
 .main-navigation .current-menu-ancestor > a {
 }
 
-.main-navigation .current-menu-item > a { 
+.main-navigation > .current-menu-item > a { 
     border: 2px solid #000;
     color: #000;
     text-decoration: none;

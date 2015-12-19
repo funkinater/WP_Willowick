@@ -44,7 +44,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 	<div class="wwidget">
 		<h1><?php the_title(); ?></h1>
                 <p><?php if (get_the_ID() == 217) {
-                    echo do_shortcode('[testimonials count=1]') . '<a href="' . get_permalink(217) . '" class="button">Show All</a>';
+                    echo do_shortcode('[testimonials count=1]') . '<a href="' . get_post_type_archive_link('testimonial') . '" class="button">Show All</a>';
                 } else {
                     echo get_post_meta(get_the_ID(), 'pageExcerpt', true); ?>
                     <a href="<?php the_permalink(); ?>" class="button">Learn More</a></p>
