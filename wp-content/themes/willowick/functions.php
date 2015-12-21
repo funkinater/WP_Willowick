@@ -191,3 +191,8 @@ function my_willowick_setup() {
         wp_enqueue_style('wwd-fontawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css');
 }
 add_action('wp_enqueue_scripts', 'my_willowick_setup');
+
+/**
+ * Load PHPMailer
+ */
+//require get_template_directory() . '/inc/mail.php';

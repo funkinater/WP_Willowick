@@ -13,6 +13,7 @@ wp-content/wp-cache-config.php
 wp-content/plugins/hello.php
 logs/
 temp/
+inc/mail.php
 willowickdesigns.com-access_log
 willowickdesigns.com-error_log
 /readme.html

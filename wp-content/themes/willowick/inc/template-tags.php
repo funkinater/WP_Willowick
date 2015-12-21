@@ -151,7 +151,9 @@ function shortcode_testimonials($atts) {
     if ( $atts['count'] != 'multiple' ) {
         get_template_part('template-parts/testimonials-single' );
     } else {
+        ob_start();
         get_template_part('template-parts/testimonials' );
+        return ob_get_clean();
     }
     //return ob_get_clean();
 }

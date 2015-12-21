@@ -748,6 +748,12 @@ form#login, form#login2 {
 	font-family: sans-serif;
 	font-size: .8em;
 }
+
+div.wpcf7-response-output {
+    margin-top: -9em;
+    position: absolute;
+    background: black none repeat scroll 0% 0%;
+}
 /*  Styling the submit button
 #contact input[type="Submit"] {
 
