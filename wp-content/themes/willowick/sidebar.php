@@ -18,7 +18,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
         
         $args = array(
             'posts_per_page' => 1,
-            'post_type'     => 'page',
+            'post_type'     => array ('page','product'),
             'orderby'       => 'rand',
             'meta_query'    =>  array(
                 array(
