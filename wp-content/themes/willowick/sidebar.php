@@ -47,7 +47,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
                     echo do_shortcode('[testimonials count=1]') . '<a href="' . get_post_type_archive_link('testimonial') . '" class="button">Show All</a>';
                 } else {
                     echo get_post_meta(get_the_ID(), 'pageExcerpt', true); ?>
-                    <a href="<?php the_permalink(); ?>" class="button">Learn More</a></p>
+                    <a href="<?php the_permalink(); ?>" class="button">Go to Shop</a></p>
                 <?php } //endif ?>
 	</div> <!-- .wwidget -->
 	

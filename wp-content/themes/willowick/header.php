@@ -67,10 +67,7 @@
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'willowick' ); ?></button>
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu', 'menu_class'=> 'sf-menu' ) ); ?>
 		</nav><!-- #site-navigation -->
-                
-                <div id="cart">
-                    <p>Your Basket (0)</p>
-                </div><!--#cart-->
+         
 	</header><!-- #masthead -->
         <div id="wrapper" class="clearfix">
 	<div id="content" class="site-content clearfix">

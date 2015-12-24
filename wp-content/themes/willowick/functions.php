@@ -7,6 +7,39 @@
  * @package Willowick
  */
 
+
+//this line removes the existing Woocommerce codes
+
+remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
+
+remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
+
+
+//This line adds a new action which adds a tag BEFORE the woocommerce "stuff"
+
+add_action('woocommerce_before_main_content', 'my_theme_wrapper_start', 10);
+
+//This line adds a new action which adds a tag AFTER the woocommerce "stuff"
+
+add_action('woocommerce_after_main_content', 'my_theme_wrapper_end', 10);
+
+//This line adds a new css section tag called "woogrid" BEFORE the woocommerce "stuff"
+
+function my_theme_wrapper_start() { echo '<section id="woogrid">'; }
+
+//This line ends the new "woogrid" section
+
+function my_theme_wrapper_end() { echo '</section>'; }
+
+// Change number or products per row to 3
+add_filter('loop_shop_columns', 'loop_columns');
+if (!function_exists('loop_columns')) {
+	function loop_columns() {
+		return 3; // 3 products per row
+	}
+}
+
+
 if ( ! function_exists( 'willowick_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.

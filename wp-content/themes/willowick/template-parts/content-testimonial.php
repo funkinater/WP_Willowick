@@ -15,7 +15,7 @@
             
 		<?php
                 
-                    the_content();
+                    echo get_the_content();
                     the_title("<author>", "</author>");
                     
 		?>

@@ -46,6 +46,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	## Asides
 	## Comments
         ## Footer
+        ## WooCommerce
 # Infinite scroll
 # Media
 	## Captions
@@ -384,7 +385,6 @@ body {
 	background: #fff;
 	font-size:80%;
 	line-height: 180%;
-	text-align:justify;
 	color: #38180d;
 	width: 899px;
 	margin: 0 auto;
@@ -855,7 +855,7 @@ a:active {
 }
 
 #primary-menu > li {
-        display: block;
+        display:block;
 	float: left;
 	position: relative;
         line-height: 40px;
@@ -866,6 +866,22 @@ a:active {
         margin-top: -14px;*/
 }
 
+
+#wpmenucartli {
+    font-size: 0.7em;
+    bottom: -19px;
+    margin-right: -20px;
+    color: #000;
+    right: 53px;
+    border: 1px solid #808080;
+    top: 28px;
+    background-color: lightgreen;
+    box-shadow: -3px 3px 2px 0 #ccc;
+    
+}
+#wpmenucartli a {
+    color: black;
+}
 .main-navigation a {
 	display: block;
 	text-decoration: none;
@@ -1374,6 +1390,56 @@ footer {
 
 #footerRight ul {
     margin: 0;
+}
+/*--------------------------------------------------------------
+## WooCommerce
+--------------------------------------------------------------*/
+
+#woogrid {
+
+width:614px;
+
+float:right;
+
+border-right:1px dotted #ccc;
+margin-right: 10px;
+
+padding:15px 15px 30px 15px;
+
+min-height:420px;
+
+overflow:hidden;
+
+background-color: transparent;
+
+}
+
+
+#woogrid ul li {
+
+width: 160px;
+
+border: 1px solid #000; display: -moz-inline-stack;
+
+display: inline-block;
+
+vertical-align: top;
+
+margin: 5px; zoom: 1;
+
+}
+
+#woogrid ul:not(.page-numbers) li {
+    min-height: 250px;
+}
+
+.woocommerce-pagination ul li {
+    height: 30px;
+}
+
+.woocommerce-tabs ul.tabs {
+    height: 40px;
+    padding: 0 15px;
 }
 /*--------------------------------------------------------------
 ## Comments
